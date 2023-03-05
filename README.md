@@ -1,6 +1,6 @@
-# quasar open source webpage (imm-osq)
+# quasar open source webpage (imm-osq) ((SPA))
 
-a collectives page
+a boilerplate quasar spa / webpage - a collectives effort
 
 ## Install the dependencies
 
@@ -44,6 +44,6 @@ See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-
 
 ### Dear Contributers
 
-git commit notation: verb + description
-verb can be: add / remove / update / reforge
+git commit notation: verb + description ||
+verb can be: add / remove / update / reforge ||
 eg: update color on contact form submit btn
