@@ -1,0 +1,40 @@
+{
+  "name": "imm-osq-spa",
+  "version": "0.1.0",
+  "description": "Imm an open source qasar (boilerplate) spa.",
+  "productName": "imm-osq-spa",
+  "author": "IMM-RJD",
+  "private": true,
+  "scripts": {
+    "lint": "eslint --ext .js,.ts,.vue ./",
+    "format": "prettier --write \"**/*.{js,ts,vue,scss,html,md,json}\" --ignore-path .gitignore",
+    "test": "echo \"No test specified\" && exit 0"
+  },
+  "dependencies": {
+    "@quasar/cli": "^2.0.0",
+    "@quasar/extras": "^1.15.11",
+    "@quasar/icongenie": "^2.5.4",
+    "@quasar/quasar-ui-qmediaplayer": "^2.0.0-beta.6",
+    "quasar": "^2.11.6",
+    "vue": "^3.2.37",
+    "vue-i18n": "^9.3.0-beta.16",
+    "vue-router": "^4.0.16"
+  },
+  "devDependencies": {
+    "@quasar/app-vite": "^1.2.0",
+    "@types/node": "^12.20.55",
+    "@typescript-eslint/eslint-plugin": "^5.29.0",
+    "@typescript-eslint/parser": "^5.29.0",
+    "autoprefixer": "^10.4.7",
+    "eslint": "^8.18.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-vue": "^8.7.1",
+    "prettier": "^2.7.1",
+    "typescript": "^4.7.4"
+  },
+  "engines": {
+    "node": "^18 || ^16 || ^14.19",
+    "npm": ">= 6.13.4",
+    "yarn": ">= 1.21.1"
+  }
+}
