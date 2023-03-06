@@ -16,6 +16,7 @@ export interface Person {
   instagram?: string;
   youtube?: string;
   soundcloud?: string;
+  github?: string;
   socialOrder?: string;
 }
 export interface Event {

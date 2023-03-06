@@ -55,7 +55,7 @@ export default defineComponent({
         email: 'Brannon_Schneider99@gmail.com',
         youtube: 'channel/as8df89asd98f8asdf98as89df98',
         soundcloud: 'profilename',
-        socialOrder: 'soundcloud, youtube',
+        socialOrder: 'soundcloud, github, youtube',
       },
       {
         id: 2,

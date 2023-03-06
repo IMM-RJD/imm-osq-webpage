@@ -38,7 +38,14 @@
 
         <q-separator
           v-show="
-            person.phone || person.email || person.homepage || person.instagram
+            person.phone ||
+            person.email ||
+            person.homepage ||
+            person.facebook ||
+            person.instagram ||
+            person.youtube ||
+            person.soundcloud ||
+            person.github
           "
           dark
         />
@@ -88,7 +95,8 @@
             person.facebook ||
             person.instagram ||
             person.youtube ||
-            person.soundcloud
+            person.soundcloud ||
+            person.github
           "
           align="evenly"
         >
@@ -108,6 +116,8 @@
                 ? 'https://www.youtube.com/' + person.youtube
                 : so == 'soundcloud'
                 ? 'https://www.soundcloud.com/' + person.soundcloud
+                : so == 'github'
+                ? 'https://www.github.com/' + person.github
                 : ''
             "
             target="_blank"
