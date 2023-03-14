@@ -119,6 +119,7 @@
         :subtitle="$t('project_timeline_project1_title_subtitle')"
       >
         <q-video
+          loading="lazy"
           :ratio="16 / 9"
           src="https://www.youtube.com/embed/KXlHK0VuDJg"
         ></q-video>

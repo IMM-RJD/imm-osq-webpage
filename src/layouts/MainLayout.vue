@@ -93,6 +93,14 @@
 
             <q-item-section> {{ $t('Imprint') }} </q-item-section>
           </q-item>
+
+          <q-item v-ripple clickable to="/music" class="q-mt-md">
+            <q-item-section avatar>
+              <q-icon name="fa-solid fa-music" />
+            </q-item-section>
+
+            <q-item-section> {{ $t('Mehr_klang') }} </q-item-section>
+          </q-item>
         </q-list>
       </q-scroll-area>
     </q-drawer>
