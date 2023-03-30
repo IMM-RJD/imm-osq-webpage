@@ -94,7 +94,15 @@
             <q-item-section> {{ $t('Imprint') }} </q-item-section>
           </q-item>
 
-          <q-item v-ripple clickable to="/music" class="q-mt-md">
+          <q-item v-ripple clickable to="/bulletinboard" class="q-mt-md">
+            <q-item-section avatar>
+              <q-icon name="fa-solid fa-globe" />
+            </q-item-section>
+
+            <q-item-section> {{ $t('BulletinBoard') }} </q-item-section>
+          </q-item>
+
+          <q-item v-ripple clickable to="/music">
             <q-item-section avatar>
               <q-icon name="fa-solid fa-music" />
             </q-item-section>

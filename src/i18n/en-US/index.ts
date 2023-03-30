@@ -8,6 +8,7 @@ export default {
   Contact: 'Contact',
   Sponsors_partner: 'Sponsors & Partners',
   Imprint: 'Imprint',
+  BulletinBoard: 'Bulletin Board',
   Mehr_klang: 'Mehr_klang',
   // team page
   team_headline: 'Our team',
@@ -48,6 +49,10 @@ export default {
   partner_partner: 'Partner',
   // imprint
   imprint_headline: 'Imprint',
+  // bulletinboard
+  bulletinboard_headline: 'Our Bulletin Board',
+  bulletinboard_description:
+    '... displays a mix of things and stuff from some of the various variety the world seems to offer.',
   // music / mehr klang
   music_headline: "Mehr_klang {'|'} More_sound",
   music_recommendation: '(🌸ºั⌣ºั)',

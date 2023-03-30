@@ -8,6 +8,7 @@ export default {
   Contact: 'Kontakt',
   Sponsors_partner: 'Förderer & Partner',
   Imprint: 'Impressum',
+  BulletinBoard: 'Zum Bunten Brett',
   Mehr_klang: 'Mehr_klang',
   // team page
   team_headline: 'Unser Team',
@@ -49,6 +50,10 @@ export default {
   partner_partner: 'Partner',
   // imprint
   imprint_headline: 'Impressum',
+  // bulletinboard
+  bulletinboard_headline: 'Unser Buntes Brett',
+  bulletinboard_description:
+    '... zeigt kunterbunt verschiedenes aus einer kunterbunten Welt.',
   // music / mehr klang
   music_headline: 'Mehr_klang',
   music_recommendation: '(🌸ºั⌣ºั)',

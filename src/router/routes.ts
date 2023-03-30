@@ -17,6 +17,10 @@ const routes: RouteRecordRaw[] = [
         path: 'imprint',
         component: () => import('src/pages/ImprintPage.vue'),
       },
+      {
+        path: 'bulletinboard',
+        component: () => import('src/pages/BulletinBoardPage.vue'),
+      },
       { path: 'music', component: () => import('src/pages/MusicPage.vue') },
       { path: 'test123', component: () => import('pages/test123Page.vue') },
     ],

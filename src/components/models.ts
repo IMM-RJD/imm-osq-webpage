@@ -38,3 +38,24 @@ export interface Event {
   allowShare?: boolean;
   canceled?: boolean;
 }
+export interface Shoutout {
+  id: number;
+  imgSrc: string;
+  imgAlt?: string;
+  imgPosition?: string;
+  funkyStyles?: boolean;
+  title: { en: string; de: string };
+  subtitle?: { en: string; de: string };
+  expanded?: boolean;
+  description: { en: string; de: string };
+  phone?: string;
+  email?: string;
+  homepage?: string;
+  homepageText?: string;
+  facebook?: string;
+  instagram?: string;
+  youtube?: string;
+  soundcloud?: string;
+  github?: string;
+  socialOrder?: string;
+}
