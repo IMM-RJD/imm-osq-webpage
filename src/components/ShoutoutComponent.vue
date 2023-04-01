@@ -6,12 +6,12 @@
       v-for="shoutout in shoutouts"
       :key="shoutout.id"
       :class="
-        shoutout.funkyStyles !== undefined
-          ? shoutout.funkyStyles
-            ? 'bg-secondary text-white imm-shoutout-card imm-funky-blur imm-funky-corner-crop-lb'
-            : 'bg-secondary text-white imm-shoutout-card'
-          : 'bg-secondary text-white imm-shoutout-card'
+        'text-white imm-shoutout-card ' +
+        (shoutout.funkyStyles !== undefined && shoutout.funkyStyles
+          ? 'imm-funky-blur imm-funky-corner-crop-lb '
+          : '')
       "
+      :style="'background-color:' + shoutout.bgColor"
     >
       <q-img
         width="100%"

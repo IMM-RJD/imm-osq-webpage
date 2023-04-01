@@ -6,11 +6,10 @@
       v-for="person in persons"
       :key="person.id"
       :class="
-        person.funkyStyles !== undefined
-          ? person.funkyStyles
-            ? 'bg-secondary text-white imm-person-card imm-funky-blur'
-            : 'bg-secondary text-white imm-person-card'
-          : 'bg-secondary text-white imm-person-card'
+        'bg-secondary text-white imm-person-card ' +
+        (person.funkyStyles !== undefined && person.funkyStyles
+          ? 'imm-funky-blur '
+          : '')
       "
     >
       <q-img

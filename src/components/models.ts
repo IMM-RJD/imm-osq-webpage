@@ -40,6 +40,7 @@ export interface Event {
 }
 export interface Shoutout {
   id: number;
+  bgColor: string;
   imgSrc: string;
   imgAlt?: string;
   imgPosition?: string;
