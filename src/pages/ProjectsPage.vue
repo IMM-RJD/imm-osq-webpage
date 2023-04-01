@@ -2,7 +2,7 @@
   <q-page padding class="q-mx-md">
     <h4 class="q-my-lg">{{ $t('project_headline') }}</h4>
 
-    <q-timeline color="km-timeline">
+    <q-timeline color="imm-timeline">
       <q-timeline-entry :title="$t('project_timeline_project3_title')">
         <q-carousel
           v-model="slideP3"

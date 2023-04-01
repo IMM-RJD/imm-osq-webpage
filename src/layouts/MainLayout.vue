@@ -13,7 +13,7 @@
 
     <q-drawer
       v-model="leftDrawerOpen"
-      class="km-background"
+      class="imm-background"
       show-if-above
       :mini="miniStateLeft"
       :width="220"

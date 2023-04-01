@@ -9,7 +9,7 @@
       :scroll-offset="2000"
       :offset="[18, 18]"
     >
-      <q-btn fab icon="keyboard_arrow_up" color="km-timeline" />
+      <q-btn fab icon="keyboard_arrow_up" color="imm-timeline" />
     </q-page-scroller>
   </q-page>
 </template>
