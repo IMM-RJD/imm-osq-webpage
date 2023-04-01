@@ -8,7 +8,7 @@
       :class="
         shoutout.funkyStyles !== undefined
           ? shoutout.funkyStyles
-            ? 'bg-secondary text-white imm-shoutout-card funky'
+            ? 'bg-secondary text-white imm-shoutout-card imm-funky-blur imm-funky-corner-crop-lb'
             : 'bg-secondary text-white imm-shoutout-card'
           : 'bg-secondary text-white imm-shoutout-card'
       "
@@ -36,7 +36,7 @@
           </div>
         </q-card-section>
 
-        <q-card-actions class="q-pt-none">
+        <q-card-actions class="q-py-none">
           <q-space />
           <q-btn
             color="white"
@@ -70,7 +70,7 @@
               dark
             />
             <q-card-actions
-              v-show="shoutout.phone || shoutout.email || shoutout.homepage"
+              v-show="shoutout.phone || shoutout.email"
               vertical
               class="q-pb-none q-pt-md"
             >
@@ -96,32 +96,35 @@
                 :href="'mailto:' + shoutout.email"
                 icon="fa-solid fa-envelope"
                 :label="shoutout.email"
-              ></q-btn>
-              <q-btn
-                v-show="shoutout.homepage"
-                unelevated
-                class="q-mb-sm"
-                :no-caps="true"
-                align="left"
-                type="a"
-                :href="shoutout.homepage"
-                target="_blank"
-                icon="fa-solid fa-share"
-                :label="shoutout.homepageText || shoutout.homepage"
-              ></q-btn>
-            </q-card-actions>
+              ></q-btn
+            ></q-card-actions>
           </div>
         </q-slide-transition>
+
         <q-card-actions
           v-if="
+            shoutout.homepage ||
             shoutout.facebook ||
             shoutout.instagram ||
             shoutout.youtube ||
             shoutout.soundcloud ||
             shoutout.github
           "
+          class="q-pt-none"
           align="evenly"
         >
+          <q-btn
+            v-show="shoutout.homepage"
+            unelevated
+            class="q-my-sm"
+            :no-caps="true"
+            align="left"
+            type="a"
+            :href="shoutout.homepage"
+            target="_blank"
+            icon="fa-solid fa-share"
+            :label="shoutout.homepageText || shoutout.homepage"
+          ></q-btn>
           <q-btn
             v-for="so in shoutout.socialOrder?.replaceAll(' ', '').split(',')"
             :key="so"
@@ -198,7 +201,7 @@ export default defineComponent({
 
 <style lang="scss">
 .imm-shoutout-card {
-  width: 300px;
+  width: 400px;
   display: flex;
   flex-flow: column;
   > .content-wrapper {
@@ -211,25 +214,4 @@ export default defineComponent({
     }
   }
 }
-.funky {
-  transition: all 0.2s;
-  &:hover {
-    filter: blur(0px);
-    opacity: 1;
-  }
-}
-@media (min-width: $breakpoint-md-min) {
-  .funky {
-    filter: blur(15px);
-    opacity: 0.6;
-    &:hover {
-      transform: scale(0.98) translateZ(0) perspective(1px);
-    }
-  }
-}
-
-// .corner-big-crop {
-//   /* -webkit-clip-path: polygon(0 0,100% 0,100% 100%,50px 100%,0 calc(100% - 50px)); */
-//   clip-path: polygon(0 0, 100% 0, 100% 100%, 50px 100%, 0 calc(100% - 50px));
-// }
 </style>
