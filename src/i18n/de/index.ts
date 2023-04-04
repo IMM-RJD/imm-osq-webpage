@@ -1,4 +1,6 @@
 export default {
+  // app
+  readmore: 'Weiterlesen',
   // main nav
   Team: 'Team',
   Concept: 'Konzept',

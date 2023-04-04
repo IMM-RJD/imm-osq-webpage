@@ -5,10 +5,12 @@
     <q-card
       v-for="shoutout in shoutouts"
       :key="shoutout.id"
+      square
+      flat
       :class="
         'text-white imm-shoutout-card ' +
         (shoutout.funkyStyles !== undefined && shoutout.funkyStyles
-          ? 'imm-funky-blur imm-funky-corner-crop-lb '
+          ? 'imm-funky-corner-crop-lb '
           : '')
       "
       :style="'background-color:' + shoutout.bgColor"
@@ -16,19 +18,17 @@
       <q-img
         width="100%"
         height="250px"
-        fit="cover"
+        :img-class="shoutout.imgClass || ''"
+        :fit="shoutout.imgFit || 'cover'"
         :position="shoutout.imgPosition || '50% 50%'"
+        :style="'background-color:' + shoutout.imgWrapBgColor || 'inherit'"
         loading="lazy"
         :src="shoutout.imgSrc"
-        :alt="
-          shoutout.imgAlt !== undefined
-            ? shoutout.imgAlt
-            : getTitle(shoutout, $i18n.locale)
-        "
+        :alt="shoutout.imgAlt || getTitle(shoutout, $i18n.locale)"
       ></q-img>
-      <div class="q-pb-none content-wrapper">
-        <q-card-section class="q-pb-xs">
-          <div class="text-h6">
+      <div class="q-pa-xs q-pb-none content-wrapper">
+        <q-card-section>
+          <div class="text-h6 q-pb-xs">
             {{ getTitle(shoutout, $i18n.locale) }}
           </div>
           <div class="text-subtitle2">
@@ -39,9 +39,8 @@
         <q-card-actions class="q-py-none">
           <q-space />
           <q-btn
-            color="white"
+            color="secondary"
             round
-            flat
             dense
             :icon="
               shoutout.expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'
@@ -53,7 +52,27 @@
         <q-slide-transition>
           <div v-show="shoutout.expanded">
             <q-card-section class="content-description">
+              <div v-show="shoutout.introVideo" class="q-my-md q-mx-xs">
+                <q-video
+                  :ratio="16 / 9"
+                  :src="createEmbeded(shoutout.introVideo || '')"
+                />
+              </div>
               {{ getDescription(shoutout, $i18n.locale) }}
+              <br />
+              <q-btn
+                v-show="shoutout.readmore"
+                flat
+                unelevated
+                class="q-mt-xs"
+                :no-caps="true"
+                align="left"
+                type="a"
+                target="_blank"
+                :href="shoutout.readmore"
+                icon-right="keyboard_arrow_right"
+                :label="$t('readmore')"
+              ></q-btn>
             </q-card-section>
 
             <q-separator
@@ -65,7 +84,8 @@
                 shoutout.instagram ||
                 shoutout.youtube ||
                 shoutout.soundcloud ||
-                shoutout.github
+                shoutout.github ||
+                shoutout.twitter
               "
               dark
             />
@@ -108,9 +128,9 @@
             shoutout.instagram ||
             shoutout.youtube ||
             shoutout.soundcloud ||
-            shoutout.github
+            shoutout.github ||
+            shoutout.twitter
           "
-          class="q-pt-none"
           align="evenly"
         >
           <q-btn
@@ -143,6 +163,8 @@
                 ? 'https://www.soundcloud.com/' + shoutout.soundcloud
                 : so == 'github'
                 ? 'https://www.github.com/' + shoutout.github
+                : so == 'twitter'
+                ? 'https://twitter.com/' + shoutout.twitter
                 : ''
             "
             target="_blank"
@@ -177,7 +199,6 @@ export default defineComponent({
         ? shoutout.title.de
         : 'missing title';
     },
-
     getSubtitle(shoutout: Shoutout, locale: string): string {
       return (
         '' +
@@ -195,6 +216,12 @@ export default defineComponent({
         ? shoutout.description.de
         : 'missing description';
     },
+    createEmbeded: function (str: string): string {
+      return str
+        .replace('watch?v=', 'embed/')
+        .replace('playlist?list', 'embed/videoseries?list')
+        .replace('https://youtu.be/', 'https://www.youtube.com/embed/');
+    },
   },
 });
 </script>
@@ -204,11 +231,16 @@ export default defineComponent({
   width: 400px;
   display: flex;
   flex-flow: column;
+  border-radius: 0 10px 10px 0px !important;
+  border: 2px solid transparent;
+  &:hover {
+    border: 2px solid $primary;
+  }
   > .content-wrapper {
     flex-grow: 10000;
     display: flex;
     flex-direction: column;
-    > .content-description {
+    > div > .content-description {
       flex-grow: 1;
       white-space: pre-line;
     }

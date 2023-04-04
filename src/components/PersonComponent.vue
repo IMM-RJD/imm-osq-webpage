@@ -44,7 +44,8 @@
             person.instagram ||
             person.youtube ||
             person.soundcloud ||
-            person.github
+            person.github ||
+            person.twitter
           "
           dark
         />
@@ -95,7 +96,8 @@
             person.instagram ||
             person.youtube ||
             person.soundcloud ||
-            person.github
+            person.github ||
+            person.twitter
           "
           align="evenly"
         >
@@ -117,6 +119,8 @@
                 ? 'https://www.soundcloud.com/' + person.soundcloud
                 : so == 'github'
                 ? 'https://www.github.com/' + person.github
+                : so == 'twitter'
+                ? 'https://twitter.com/' + person.twitter
                 : ''
             "
             target="_blank"

@@ -81,7 +81,7 @@ body {
 }
 .imm-funky-corner-crop-lb {
   // small crop
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 36px 100%, 0px calc(104% - 50px));
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 36px 100%, 0px calc(102% - 50px));
   // big crop
   // clip-path: polygon(0 0, 100% 0, 100% 100%, 50px 100%, 0 calc(100% - 50px));
 }

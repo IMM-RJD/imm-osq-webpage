@@ -63,7 +63,7 @@ export default defineComponent({
     };
   },
   methods: {
-    createEmbeded: function (obj: Array<string>) {
+    createEmbeded: function (obj: Array<string>): Array<string> {
       for (let i = 0; i < obj.length; i++) {
         obj[i] = obj[i]
           .replace('watch?v=', 'embed/')
@@ -72,7 +72,7 @@ export default defineComponent({
       }
       return obj;
     },
-    randomize: function (obj: Array<string>) {
+    randomize: function (obj: Array<string>): Array<string> {
       return obj.sort(function () {
         return 0.5 - Math.random();
       });

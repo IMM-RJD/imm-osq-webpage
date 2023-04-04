@@ -17,6 +17,7 @@ export interface Person {
   youtube?: string;
   soundcloud?: string;
   github?: string;
+  twitter?: string;
   socialOrder?: string;
 }
 export interface Event {
@@ -43,12 +44,17 @@ export interface Shoutout {
   bgColor: string;
   imgSrc: string;
   imgAlt?: string;
+  imgClass?: string;
   imgPosition?: string;
+  imgFit?: any;
+  imgWrapBgColor?: string;
   funkyStyles?: boolean;
   title: { en: string; de: string };
   subtitle?: { en: string; de: string };
   expanded?: boolean;
+  introVideo?: string;
   description: { en: string; de: string };
+  readmore?: string;
   phone?: string;
   email?: string;
   homepage?: string;
@@ -58,5 +64,6 @@ export interface Shoutout {
   youtube?: string;
   soundcloud?: string;
   github?: string;
+  twitter?: string;
   socialOrder?: string;
 }
