@@ -52,7 +52,11 @@
         <q-slide-transition>
           <div v-show="shoutout.expanded">
             <q-card-section class="content-description">
-              <div v-show="shoutout.introVideo" class="q-my-md q-mx-xs">
+              <div
+                v-show="shoutout.introVideo"
+                class="q-my-md"
+                style="position: relative; left: -20px; width: 397px"
+              >
                 <q-video
                   :ratio="16 / 9"
                   :src="createEmbeded(shoutout.introVideo || '')"
