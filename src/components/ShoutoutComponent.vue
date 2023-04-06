@@ -51,17 +51,18 @@
         </q-card-actions>
         <q-slide-transition>
           <div v-show="shoutout.expanded">
-            <q-card-section class="content-description">
+            <q-card-section class="content-video q-pa-none">
               <div
                 v-show="shoutout.introVideo"
                 class="q-my-md"
-                style="position: relative; left: -20px; width: 397px"
+                style="position: relative; left: -2%; width: 104%"
               >
                 <q-video
                   :ratio="16 / 9"
                   :src="createEmbeded(shoutout.introVideo || '')"
-                />
-              </div>
+                /></div
+            ></q-card-section>
+            <q-card-section class="content-description">
               {{ getDescription(shoutout, $i18n.locale) }}
               <br />
               <q-btn
