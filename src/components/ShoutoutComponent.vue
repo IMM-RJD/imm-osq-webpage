@@ -26,8 +26,8 @@
         :src="shoutout.imgSrc"
         :alt="shoutout.imgAlt || getTitle(shoutout, $i18n.locale)"
       ></q-img>
-      <div class="q-pa-xs q-pb-none content-wrapper">
-        <q-card-section>
+      <div class="q-pb-none content-wrapper">
+        <q-card-section class="q-pa-lg">
           <div class="text-h6 q-pb-xs">
             {{ getTitle(shoutout, $i18n.locale) }}
           </div>
@@ -52,17 +52,13 @@
         <q-slide-transition>
           <div v-show="shoutout.expanded">
             <q-card-section class="content-video q-pa-none">
-              <div
-                v-show="shoutout.introVideo"
-                class="q-my-md"
-                style="position: relative; left: -2%; width: 104%"
-              >
+              <div v-show="shoutout.introVideo" class="q-my-md">
                 <q-video
                   :ratio="16 / 9"
                   :src="createEmbeded(shoutout.introVideo || '')"
                 /></div
             ></q-card-section>
-            <q-card-section class="content-description">
+            <q-card-section class="content-description q-px-lg q-pt-xs">
               {{ getDescription(shoutout, $i18n.locale) }}
               <br />
               <q-btn
@@ -97,7 +93,7 @@
             <q-card-actions
               v-show="shoutout.phone || shoutout.email"
               vertical
-              class="q-pb-none q-pt-md"
+              class="q-pb-none q-pt-md q-px-lg"
             >
               <q-btn
                 v-show="shoutout.phone"
@@ -137,6 +133,7 @@
             shoutout.twitter
           "
           align="evenly"
+          class="q-px-md"
         >
           <q-btn
             v-show="shoutout.homepage"
